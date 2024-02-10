@@ -1,6 +1,17 @@
 import React from "react";
+import $ from "jquery";
 
 export default class App extends React.Component {
+  componentDidMount() {
+    $("<h1 />")
+      .text("Hello world from JQuery")
+      .css({
+        textAlign: "center",
+        color: "red",
+      })
+      .appendTo($("header"));
+  }
+
   render() {
     return (
       <React.Fragment>

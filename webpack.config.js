@@ -26,6 +26,9 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
   ],
+  resolve: {
+    extensions: [".js", ".ts"],
+  },
   module: {
     rules: [
       {
@@ -41,7 +44,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.js$/,
+        test: /\.js|ts$/,
         exclude: /node_modules/,
         loader: "babel-loader",
       },
